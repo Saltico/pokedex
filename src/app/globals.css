@@ -6,6 +6,24 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --type-grass: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  --type-poison: linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
+  --type-fire: linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
+  --type-flying: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+  --type-ice: linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+  --type-psychic: linear-gradient(180deg, #f366b9 50%, #f366b9 50%);
+  --type-normal: linear-gradient(180deg, #a4acaf 50%, #a4acaf 50%);
+  --type-fighting: linear-gradient(180deg, #d56723 50%, #d56723 50%);
+  --type-bug: linear-gradient(180deg, #729f3f 50%, #729f3f 50%);
+  --type-dark: linear-gradient(180deg, #707070 50%, #707070 50%);
+  --type-fairy: linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+  --type-water: linear-gradient(180deg, #4592c4 50%, #4592c4 50%);
+  --type-electric: linear-gradient(180deg, #eed535 50%, #eed535 50%);
+  --type-ghost: linear-gradient(180deg, #7b62a3 50%, #7b62a3 50%);
+  --type-steel: linear-gradient(180deg, #9eb7b8 50%, #9eb7b8 50%);
+  --type-ground: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+  --type-rock: linear-gradient(180deg, #a38c21 50%, #a38c21 50%);
+  --type-dragon: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,15 +34,77 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body{
+  background: #424242 url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
+  font-family: "Flexo-Regular",arial,sans-serif;
+  font-size: 16px;
+  color: #fff;
+  height: 100%;
 }
+
+.container{
+  color: rgb(var(--foreground-rgb));
+  background: #fff url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
+  margin: 0 auto;
+  max-width: 1280px;
+  opacity: 1;
+}
+
+.wrapper{
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  max-width: 1024px;
+  width: 100%;
+}
+
+.section{
+  background: #fff;
+  max-width: 1020x;
+  background-size: 100% 1px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  height: auto;
+}
+
+.result{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pkmn-img{
+  background: #F2F2F2;
+  float: left;
+  display: block;
+  position: relative;
+  border-radius: 5px;
+  margin: 0.5em;
+}
+
+.card{
+  margin: 0.5em;
+  color: #919191;
+}
+
+.type-badge{
+  display: inline-flex;
+  font-family: "Flexo-Medium",arial,sans-serif;
+  color: #212121;
+  max-width: 110px;
+  line-height: 18px;
+  width: 38.4375%;
+  font-size: 11px;
+  border-radius: 3px;
+  justify-content: center;
+  text-align: center;
+  float: left;
+  padding: 0 1em;
+  margin: 0 1.5625% 0 0;
+}
+
 
 @layer utilities {
   .text-balance {
