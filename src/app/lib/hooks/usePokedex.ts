@@ -8,7 +8,7 @@ interface Pokedex {
   }
 
 const usePokedex = (page: number) => {
-    const [pokedex, setPokedex] = useState([]);
+    /* const [pokedex, setPokedex] = useState([]);
 
     const loadPokedex = async () => {
         const pokemonList = await fetchAllPokedexData(page);
@@ -16,7 +16,7 @@ const usePokedex = (page: number) => {
         setPokedex((prevList) => [...prevList, ...newPokemonList]);
         console.log(newPokemonList)
         return newPokemonList
-      };
+      }; */
 }
 
 export default usePokedex;
