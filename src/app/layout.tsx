@@ -16,7 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      <main className="container">
+            <h1 style={{color: 'black', textAlign: 'center', fontSize: '150%', fontWeight: '600'}}>ExamediDex</h1>    
+            <div className="wrapper">
+              {children}
+            </div>
+        </main></body>
     </html>
   );
 }

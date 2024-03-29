@@ -1,22 +1,26 @@
-import { fetchPokedexData } from "../lib/data";
+import { fetchAllPokedexData } from "../lib/data";
 import PokemonCard from "./pokemon-card";
-import Pagination from './pagination-button';
+import usePokedex from "../lib/hooks/usePokedex";
+
+interface Pokedex {
+    name: string;
+    url: string;
+  }
 
 export default async function PokemonList({page}: {page: number}){
+
     
-    const pokemonList = await fetchPokedexData(page);
+    const pokemonList: Pokedex = await fetchAllPokedexData(page);
+
     return(
-        <section className="section">
             <ul className="result">
-            {pokemonList.map((pkmn: JSON) => (
-                <li key={pkmn.name}>
-                    <PokemonCard url={pkmn.url}></PokemonCard>
-                </li>
-                ))
-            }
+                {pokemonList.map((pkmn: JSON) => (
+                    <li key={pkmn.name}>
+                        <PokemonCard url={pkmn.url}></PokemonCard>
+                    </li>
+                    ))
+                }
             </ul>
-            <Pagination></Pagination>
-        </section>
         
     )
 }
