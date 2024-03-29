@@ -5,6 +5,14 @@ import PokemonStats from "../ui/info/pokemon-stats";
 import PokemonBio from "../ui/info/pokemon-bio";
 import BackButton from "../ui/info/back-button";
 
+interface types {
+  type:{
+
+      name: string;
+      url: string;
+  }
+}
+
 export default async function InfoPage({
     searchParams,
   }: {
@@ -57,7 +65,7 @@ export default async function InfoPage({
                   </div>
                   <PokemonBio pkmnData={pkmnData}></PokemonBio>
                   <p className="pkmn-description">Type</p>
-                  {types.map((el: object)=>(
+                  {types.map((el: types)=>(
                     <span className='type-badge' 
                         key={id}
                         style={{background: `var(--type-${el.type.name})`,

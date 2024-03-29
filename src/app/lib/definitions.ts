@@ -1,5 +1,5 @@
 export type Pokemon = {
-    abilities: object,
+    abilities: [],
     base_experience: number,
     cries: {
         latest: any

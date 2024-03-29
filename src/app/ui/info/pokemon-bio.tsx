@@ -1,7 +1,16 @@
 import { Pokemon } from "@/app/lib/definitions";
 
+interface abilities {
+    ability:{
+        name: string;
+        url: string;
+    }
+}
+
 export default function PokemonBio({pkmnData}:{pkmnData: Pokemon}){
 
+    const pkmnAbility: abilities[] = pkmnData.abilities
+    console.log(pkmnAbility)
     const addCommaBeforeLastChar = (str: string) => {
         if (str.length === 1) {
           return '0,' + str;
@@ -42,7 +51,7 @@ export default function PokemonBio({pkmnData}:{pkmnData: Pokemon}){
                             <ul className="attribute-list">
                                 <li>
                                     <a>
-                                        <span className="value">{pkmnData.abilities[0].ability.name.charAt(0).toUpperCase() + pkmnData.abilities[0].ability.name.slice(1)}</span>
+                                        <span className="value">{pkmnAbility[0].ability.name.charAt(0).toUpperCase() + pkmnAbility[0].ability.name.slice(1)}</span>
                                     </a>
                                 </li>
                             </ul>
