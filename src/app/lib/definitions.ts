@@ -1,7 +1,9 @@
 export type Pokemon = {
     abilities: object,
     base_experience: number,
-    cries: object,
+    cries: {
+        latest: any
+    },
     forms: object,
     game_indices: object,
     height: number,
