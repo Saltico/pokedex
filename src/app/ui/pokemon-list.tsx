@@ -9,12 +9,11 @@ interface Pokedex {
 
 export default async function PokemonList({page}: {page: number}){
 
-    
-    const pokemonList: Pokedex = await fetchAllPokedexData(page);
+    const pokemonList: Pokedex[] = await fetchAllPokedexData(page);
 
     return(
             <ul className="result">
-                {pokemonList.map((pkmn: JSON) => (
+                {pokemonList.map((pkmn) => (
                     <li key={pkmn.name}>
                         <PokemonCard url={pkmn.url}></PokemonCard>
                     </li>

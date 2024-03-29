@@ -3,6 +3,14 @@ import Link from 'next/link';
 import { Pokemon } from '../lib/definitions';
 import { fetchPokeAPI } from '../lib/data';
 
+interface types {
+    type:{
+
+        name: string;
+        url: string;
+    }
+}
+
 export default async function PokemonCard({url}:{url: string}){
     const pkmnData: Pokemon = await fetchPokeAPI(url)
 
@@ -35,7 +43,7 @@ export default async function PokemonCard({url}:{url: string}){
             <div className='pkmn-info'>
                 <span className='id'>N° {pkmnId}</span>
                 <h5>{ name.charAt(0).toUpperCase() + name.slice(1)}</h5>
-                {types.map((el: object)=>(
+                {types.map((el: types)=>(
                     <span className='type-badge' 
                         key={id}
                         style={{background: `var(--type-${el.type.name})`,

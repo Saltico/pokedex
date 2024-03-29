@@ -21,6 +21,6 @@ export type Pokemon = {
         other: any
     },
     stats: object,
-    types: object,
+    types: [],
     weight: number,
 };
