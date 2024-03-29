@@ -1,8 +1,10 @@
 import Image from 'next/image';
+import { Pokemon } from '../lib/definitions';
 
-export default async function PokemonCard(data: string){
-    const response = await fetch(data.url)
-    const result = await response.json();
+export default async function PokemonCard({url}:{url: string}){
+
+    const data = await fetch(url)
+    const result: Pokemon = await data.json();
     const img = result.sprites.other['official-artwork'];
     const name = result.name;
     const id = await result.id;

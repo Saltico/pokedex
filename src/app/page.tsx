@@ -1,5 +1,4 @@
 import { fetchPokedexData } from "./lib/data";
-import Pagination from "./ui/pagination-button";
 import PokemonList from "./ui/pokemon-list";
 
 export default async function Page({
@@ -14,8 +13,6 @@ export default async function Page({
         <main className="container">
             <div className="wrapper">
                 <PokemonList page={currentPage}></PokemonList>
-                
-                <Pagination/>
             </div>
         </main>
     )
