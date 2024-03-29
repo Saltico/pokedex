@@ -6,7 +6,7 @@ import { fetchPokeAPI } from '../lib/data';
 export default async function PokemonCard({url}:{url: string}){
     const pkmnData: Pokemon = await fetchPokeAPI(url)
 
-    const img = pkmnData.sprites.other['official-artwork'];
+    const img= pkmnData.sprites.other['official-artwork'];
     const name = pkmnData.name;
     const id = String(pkmnData.id);
     const types = pkmnData.types;

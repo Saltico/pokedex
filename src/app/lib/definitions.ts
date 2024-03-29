@@ -15,7 +15,9 @@ export type Pokemon = {
     past_abilities: object,
     past_types: object,
     species: object,
-    sprites: object,
+    sprites:{
+        other: any
+    },
     stats: object,
     types: object,
     weight: number,
